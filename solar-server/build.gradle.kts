@@ -6,3 +6,7 @@ plugins {
 application {
     mainClass = "plutoproject.solar.server.MainKt"
 }
+
+dependencies {
+    implementation(libs.netty.all)
+}
