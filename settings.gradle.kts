@@ -6,3 +6,4 @@ rootProject.name = "solar"
 
 include("solar-server")
 include("solar-client")
+include("solar-shared")
