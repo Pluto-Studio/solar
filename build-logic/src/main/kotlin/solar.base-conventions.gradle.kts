@@ -35,4 +35,5 @@ dependencies {
     api(libs.kotlin.reflect)
     api(libs.kotlinx.coroutine.core)
     api(libs.kotlinx.serialization.cbor)
+    api(libs.logback.classic)
 }
