@@ -1,21 +1,21 @@
 package plutoproject.solar.server
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 
 private lateinit var server: SolarServer
-private lateinit var coroutineScope: CoroutineScope
 
+@OptIn(DelicateCoroutinesApi::class)
 fun main(): Unit = runBlocking {
-    coroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
-    server = SolarServer(coroutineScope)
+    server = SolarServer()
 
     Runtime.getRuntime().addShutdownHook(Thread {
         runBlocking {
             server.shutdown()
-            coroutineScope.coroutineContext[Job]?.cancelAndJoin()
         }
     })
 
-    server.start()
-    coroutineScope.coroutineContext[Job]?.join()
+    server.startAndWait()
+    Dispatchers.shutdown()
 }
