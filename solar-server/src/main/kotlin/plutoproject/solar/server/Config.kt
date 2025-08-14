@@ -4,9 +4,16 @@ package plutoproject.solar.server
 
 import com.typesafe.config.ConfigFactory
 import kotlinx.serialization.ExperimentalSerializationApi
+import kotlinx.serialization.Serializable
 import kotlinx.serialization.hocon.Hocon
 import kotlinx.serialization.hocon.decodeFromConfig
 import java.io.File
+
+@Serializable
+data class ServerConfig(
+    val bind: String = "0.0.0.0",
+    val port: Int = 6543,
+)
 
 private val hocon = Hocon { useConfigNamingConvention = true }
 internal val config = loadConfig()
