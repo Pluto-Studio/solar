@@ -10,5 +10,5 @@ application {
 dependencies {
     implementation(libs.netty.all)
     implementation(libs.logback.classic)
-    implementation(libs.bundles.hoplite)
+    implementation(libs.kotlinx.serialization.hocon)
 }

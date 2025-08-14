@@ -10,11 +10,7 @@ plugin-kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serializat
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
 kotlinx-coroutine-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutine" }
+kotlinx-serialization-hocon = { module = "org.jetbrains.kotlinx:kotlinx-serialization-hocon", version.ref = "kotlinx-serialization" }
 kotlinx-serialization-cbor = { module = "org.jetbrains.kotlinx:kotlinx-serialization-cbor", version.ref = "kotlinx-serialization" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version = "1.5.18" }
 netty-all = { module = "io.netty:netty-all", version = "4.2.3.Final" }
-hoplite-core = { module = "com.sksamuel.hoplite:hoplite-core", version.ref = "hoplite" }
-hoplite-hocon = { module = "com.sksamuel.hoplite:hoplite-hocon", version.ref = "hoplite" }
-
-[bundles]
-hoplite = ["hoplite-core", "hoplite-hocon"]

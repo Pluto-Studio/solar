@@ -1,14 +1,12 @@
 package plutoproject.solar.server
 
 import kotlinx.coroutines.*
-import org.slf4j.LoggerFactory
 
 class SolarServer {
     private val coroutineScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
-    private val logger = LoggerFactory.getLogger("SolarServer")
 
     suspend fun startAndWait() {
-        logger.info("Server started")
+        logger.info("Server started, listening on ${config.bind}:${config.port}")
         coroutineScope.coroutineContext[Job]?.join()
     }
 
